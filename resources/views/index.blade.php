@@ -76,7 +76,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Edit
                   <i class="right fas fa-angle-left"></i>
