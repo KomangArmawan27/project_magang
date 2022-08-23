@@ -79,23 +79,8 @@
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Edit
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Update data</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Tambah Data</p>
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </nav>
@@ -111,7 +96,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Dashboard v2</h1>
+              <h1 class="m-0">Dashboard</h1>
             </div>
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -992,11 +977,6 @@
   <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
   <!-- ChartJS -->
   <script src="/assets/plugins/chart.js/Chart.min.js"></script>
-
-  <!-- AdminLTE for demo purposes -->
-  <script src="/assets/dist/js/demo.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="/assets/dist/js/pages/dashboard2.js"></script>
 </body>
 
 </html>
