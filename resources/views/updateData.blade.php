@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -98,11 +100,6 @@
                         <div class="col-sm-6">
                             <h1 class="m-0">Update Data</h1>
                         </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            </ol>
-                        </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -111,7 +108,75 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- jquery validation -->
+                            <div class="card card-primary">
+                                <!-- form start -->
+                                <form id="quickForm">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="nama">Nama</label>
+                                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kelas</label>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <select class="form-control select2bs4" style="width: 100%;">
+                                                        <option selected="selected">X</option>
+                                                        <option>XI</option>
+                                                        <option>XII</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-control select2bs4" style="width: 100%;">
+                                                        <option selected="selected">TSM</option>
+                                                        <option>RPL</option>
+                                                        <option>TKJ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="card" style="margin-top: 20px;">
+                                                <div class="card-header">
+                                                    <h3 class="card-title"><b>Status Tanggungan</b></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group clearfix">
+                                                        <div class="row">
+                                                            <div class="icheck-primary d-inline">
+                                                                <input type="radio" id="radioLunas" name="radio_status" checked>
+                                                                <label for="radioLunas">Lunas</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="icheck-primary d-inline">
+                                                                <input type="radio" id="radioBelumLunas" name="radio_status">
+                                                                <label for="radioBelumLunas">Belum Lunas</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (left) -->
+                        <!-- right column -->
+                        <div class="col-md-6">
 
+                        </div>
+                        <!--/.col (right) -->
+                    </div>
+                    <!-- /.row -->
                 </div>
                 <!--/. container-fluid -->
             </section>
@@ -154,11 +219,6 @@
     <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
     <!-- ChartJS -->
     <script src="/assets/plugins/chart.js/Chart.min.js"></script>
-
-    <!-- AdminLTE for demo purposes -->
-    <script src="/assets/dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="/assets/dist/js/pages/dashboard2.js"></script>
 </body>
 
 </html>
