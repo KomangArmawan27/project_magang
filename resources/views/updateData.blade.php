@@ -146,14 +146,26 @@
                                                     <div class="form-group clearfix">
                                                         <div class="row">
                                                             <div class="icheck-primary d-inline">
-                                                                <input type="radio" id="radioLunas" name="radio_status" checked>
-                                                                <label for="radioLunas">Lunas</label>
+                                                                <input type="checkbox" id="seragam">
+                                                                <label for="seragam">
+                                                                    Seragam
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="icheck-primary d-inline">
-                                                                <input type="radio" id="radioBelumLunas" name="radio_status">
-                                                                <label for="radioBelumLunas">Belum Lunas</label>
+                                                                <input type="checkbox" id="magang">
+                                                                <label for="magang">
+                                                                    Magang
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="icheck-primary d-inline">
+                                                                <input type="checkbox" id="lunas">
+                                                                <label for="lunas">
+                                                                    lunas
+                                                                </label>
                                                             </div>
                                                         </div>
                                                     </div>
