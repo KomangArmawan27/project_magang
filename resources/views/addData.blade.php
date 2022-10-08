@@ -204,7 +204,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <strong>Copyright &copy;  <a href="https://smkwidyagama.sch.id/" target="blank">SMK Widyagama</a>.</strong>
+            <strong>Copyright &copy; <a href="https://smkwidyagama.sch.id/" target="blank">SMK Widyagama</a>.</strong>
             All rights reserved.
         </footer>
     </div>
