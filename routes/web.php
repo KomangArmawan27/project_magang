@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', function () {
-    return view('updateData');
+
+// Admin Siswa
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () { return redirect('/admin/siswa'); });
+
+    Route::get('/siswa', function () {
+        return view('tables.siswa');
+    });
+    
+    Route::get('/add-siswa', function () {
+        return view('forms.siswa');
+    });
+    
+    Route::get('/update-siswa/{id}', function () {
+        return view('forms.siswa');
+    });
 });
 
+// Siswa
 Route::get('/', function () {
     return view('index');
 });
