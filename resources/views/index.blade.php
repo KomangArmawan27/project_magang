@@ -54,11 +54,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tombolTabel col-3">
+                                                <!-- <div class="tombolTabel col-3">
                                                     <a href="#tabelSiswa">
                                                         <button type="button" class="btn btn-block btn-success btn-sm">Daftar Siswa</button>
                                                     </a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </form>
                                     </div>
