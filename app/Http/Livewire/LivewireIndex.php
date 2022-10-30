@@ -16,6 +16,7 @@ class LivewireIndex extends LivewireDatatable
     //     return view('livewire.livewire-index');
     // }
 
+    public $nis;
     public $nama;
     public $kelas;
     public $jurusan;
@@ -27,6 +28,7 @@ class LivewireIndex extends LivewireDatatable
     {
         return [
             // NumberColumn::name('id')->label('ID')->sortBy('id')->defaultSort('asc'),
+            Column::name('nis')->label('NIS')->searchable(),
             Column::name('nama')->label('Nama')->searchable(),
             Column::name('kelas')->label('Kelas')->searchable(),
             Column::name('jurusan')->label('Jurusan')->searchable(),

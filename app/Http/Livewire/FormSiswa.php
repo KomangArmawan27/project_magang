@@ -4,10 +4,13 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Siswa;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\Rules\Exists;
 use PDO;
 
 class FormSiswa extends Component
 {
+    public $nis;
     public $nama;
     public $kelas;
     public $jurusan;
@@ -16,6 +19,7 @@ class FormSiswa extends Component
     public $magang;
     public $total_magang;
     public $event;
+    public $checker;
     public $model = Siswa::class;
 
     public function render()
@@ -23,14 +27,16 @@ class FormSiswa extends Component
         return view('livewire.form-siswa');
     }
 
-    public function mount(){
-        $id = request()->segment(count(request()->segments()));
-        $data = $this->model::find($id);
+    public function mount()
+    {
+        $nis = request()->segment(count(request()->segments()));
+        $data = $this->model::find($nis);
         $this->event = null;
 
-        if($data){
+        if ($data) {
             $this->event = $data;
 
+            $this->nis = $data->nis;
             $this->nama = $data->nama;
             $this->kelas = $data->kelas;
             $this->jurusan = $data->jurusan;
@@ -42,16 +48,33 @@ class FormSiswa extends Component
     }
 
     public function submit()
-    {        
-        $this->validate([
-            'nama'   => 'required',
-            'kelas'   => 'required',
-            'jurusan' => 'required',
-            'total_seragam' => 'required',
-            'total_magang' => 'required',
-        ]);
+    {
+        $this->validate(
+            [
+                'nis'   => 'required',
+                'nama'   => 'required',
+                'kelas'   => 'required',
+                'jurusan' => 'required',
+                'total_seragam' => 'required',
+                'total_magang' => 'required',
+            ],
+            [
+                'nis.required' => 'Form tidak boleh kosong!',
+                'nama.required' => 'Form tidak boleh kosong!',
+                'total_magang.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!',
+                'total_magang.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!',
+            ]
+        );
+
+        $checker = Siswa::where('nis', '=', $this->nis)->exists();
+        // dd($checker);
+        if ($checker  == true) {
+            return Redirect::back()->withErrors($checker);
+        }
+
 
         $data = [
+            'nis' => $this->nis,
             'nama'  => $this->nama,
             'kelas'  => $this->kelas,
             'jurusan'  => $this->jurusan,
@@ -61,9 +84,9 @@ class FormSiswa extends Component
             'total_magang'  => $this->total_magang,
         ];
 
-        if($this->event){
-            $this->model::find($this->event->id)->update($data);
-        }else{
+        if ($this->event) {
+            $this->model::find($this->event->nis)->update($data);
+        } else {
             $this->model::create($data);
         }
 

@@ -1,3 +1,4 @@
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -22,6 +23,18 @@
                         <!-- form start -->
                         <form id="quickForm" wire:submit.prevent="submit">
                             <div class="card-body">
+                                <div class="form-group">
+                                    <label for="nis">NIS</label>
+                                    <input type="text" wire:model="nis" class="form-control" id="nis"
+                                        placeholder="Masukan NIS">
+
+                                    <br>
+                                    @error('nis')
+                                    <span class="text-xs text-red-700" id="passwordHelp">
+                                        {{ $message }}
+                                    </span>
+                                    @enderror
+                                </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" wire:model="nama" class="form-control" id="nama"

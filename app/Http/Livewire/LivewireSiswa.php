@@ -16,6 +16,7 @@ class LivewireSiswa extends LivewireDatatable
     //     return view('livewire.livewire-siswa');
     // }
 
+    public $nis;
     public $nama;
     public $kelas;
     public $jurusan;
@@ -26,7 +27,8 @@ class LivewireSiswa extends LivewireDatatable
     public function columns()
     {
         return [
-            // NumberColumn::name('id')->label('ID')->sortBy('id')->defaultSort('asc'),
+            // NumberColumn::name('nis')->label('NIS')->sortBy('nis')->defaultSort('asc'),
+            Column::name('nis')->label('NIS')->searchable(),
             Column::name('nama')->label('Nama')->searchable(),
             Column::name('kelas')->label('Kelas')->searchable(),
             Column::name('jurusan')->label('Jurusan')->searchable(),
@@ -39,8 +41,8 @@ class LivewireSiswa extends LivewireDatatable
                 return $magang ? "Lunas" : "Belum Lunas";
             })->label('magang')->unsortable(),
 
-            Column::callback(['id'], function ($id) {
-                return view('livewire.actions-siswa', ['id' => $id]);
+            Column::callback(['nis'], function ($nis) {
+                return view('livewire.actions-siswa', ['nis' => $nis]);
             })->label('Action')->unsortable()
         ];
     }

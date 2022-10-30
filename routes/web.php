@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
         return view('forms.siswa');
     });
     
-    Route::get('/update-siswa/{id}', function () {
+    Route::get('/update-siswa/{nis}', function () {
         return view('forms.siswa');
     });
 });

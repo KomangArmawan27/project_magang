@@ -16,11 +16,13 @@
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     @livewireStyles
 
 </head>
-
+@include('sweetalert::alert')
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -122,6 +124,8 @@
     <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
     <!-- ChartJS -->
     <!-- <script src="/assets/plugins/chart.js/Chart.min.js"></script> -->
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
     @livewireScripts
 </body>
 
