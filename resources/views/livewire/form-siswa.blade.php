@@ -1,11 +1,10 @@
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{$event ? "Update Data" : "Save Data"}}</h1>
+                    <h1 class="m-0">{{$event ? "Perbarui Data" : "Simpan Data"}}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -25,8 +24,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nis">NIS</label>
-                                    <input type="text" wire:model="nis" class="form-control" id="nis"
-                                        placeholder="Masukan NIS">
+                                    <input type="text" wire:model="nis" class="form-control" id="nis" placeholder="Masukan NIS">
 
                                     <br>
                                     @error('nis')
@@ -37,8 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" wire:model="nama" class="form-control" id="nama"
-                                        placeholder="Masukan Nama">
+                                    <input type="text" wire:model="nama" class="form-control" id="nama" placeholder="Masukan Nama">
 
                                     <br>
                                     @error('nama')
@@ -51,8 +48,7 @@
                                     <label>Kelas</label>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <select wire:model="kelas" class="form-control select2bs4"
-                                                style="width: 100%;">
+                                            <select wire:model="kelas" class="form-control select2bs4" style="width: 100%;">
                                                 <option>Pilih Kelas</option>
                                                 <option value="X">X</option>
                                                 <option value="XI">XI</option>
@@ -67,8 +63,7 @@
                                             @enderror
                                         </div>
                                         <div class="col-md-6">
-                                            <select wire:model="jurusan" class="form-control select2bs4"
-                                                style="width: 100%;">
+                                            <select wire:model="jurusan" class="form-control select2bs4" style="width: 100%;">
                                                 <option>Pilih Jurusan</option>
                                                 <option value="TSM">TSM</option>
                                                 <option value="RPL">RPL</option>
@@ -123,8 +118,7 @@
 
                                             <div class="form-group clearfix row">
                                                 <div class="form-group col-md-6">
-                                                    <input type="text" wire:model="total_seragam" class="form-control"
-                                                        placeholder="Masukan Total Bayar Seragam">
+                                                    <input type="text" wire:model="total_seragam" class="form-control" placeholder="Masukan Total Bayar Seragam">
 
                                                     <br>
                                                     @error('total_seragam')
@@ -134,8 +128,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <input type="text" wire:model="total_magang" class="form-control"
-                                                        placeholder="Masukan Total Bayar Magang">
+                                                    <input type="text" wire:model="total_magang" class="form-control" placeholder="Masukan Total Bayar Magang">
 
                                                     <br>
                                                     @error('total_magang')

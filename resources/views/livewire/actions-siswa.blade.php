@@ -1,5 +1,5 @@
 <div class="flex space-x-1 justify-around">
-    <a href="update-siswa/{{$nis}}" class="text-teal-600 hover:bg-teal-600 hover:text-white rounded">
+    <a href="update-siswa/{{$id}}" class="text-teal-600 hover:bg-teal-600 hover:text-white rounded">
         <button class="p-1 text-blue-600 hover:bg-blue-600 hover:text-white rounded">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -9,5 +9,5 @@
         </button>
     </a>
 
-    @include('datatables::delete', ['value' => $nis])
+    @include('datatables::delete', ['value' => $id])
 </div>

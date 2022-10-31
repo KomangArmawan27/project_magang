@@ -38,10 +38,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Tambah Data </a>
+                    <a href="/admin/import" class="nav-link">Import & Export</a>
                 </li>
             </ul>
         </nav>
@@ -71,13 +71,26 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
+                        <li class="nav-item menu-open">
                             <a href="/admin/siswa" class="nav-link active">
                                 <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Siswa
-                                </p>
+                                <p>Siswa</p>
+                                <i class="right fas fa-angle-left"></i>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/siswa" class="nav-link active">
+                                        <i class="nav-icon fas fa-table"></i>
+                                        <p>Tabel Siswa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/import" class="nav-link">
+                                        <i class="nav-icon fas fa-upload"></i>
+                                        <p>Import & Eksport</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -104,6 +117,7 @@
             </div>
             <!-- /.content-header -->
 
+
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -121,7 +135,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <strong>Copyright &copy;  <a href="https://smkwidyagama.sch.id/" target="blank">SMK Widyagama</a>.</strong>
+            <strong>Copyright &copy; <a href="https://smkwidyagama.sch.id/" target="blank">SMK Widyagama</a>.</strong>
             All rights reserved.
         </footer>
     </div>

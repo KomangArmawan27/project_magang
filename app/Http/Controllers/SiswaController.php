@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportSiswa;
+use App\Exports\ExportSiswa;
 
 class SiswaController extends Controller
 {
@@ -60,5 +63,24 @@ class SiswaController extends Controller
     public function destroy(Siswa $siswa)
     {
         //
+    }
+
+    public function importView(Request $request)
+    {
+        return view('table.siswa');
+    }
+
+    public function import(Request $request)
+    {
+        Excel::import(
+            new ImportSiswa,
+            $request->file('file')->store('files')
+        );
+        return redirect()->back();
+    }
+
+    public function exportSiswa(Request $request)
+    {
+        return Excel::download(new ExportSiswa, 'siswa.xlsx');
     }
 }

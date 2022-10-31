@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Siswa;
+use Illuminate\Support\Facades\DB;
+use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules\Exists;
 use PDO;
@@ -29,8 +31,8 @@ class FormSiswa extends Component
 
     public function mount()
     {
-        $nis = request()->segment(count(request()->segments()));
-        $data = $this->model::find($nis);
+        $id = request()->segment(count(request()->segments()));
+        $data = $this->model::find($id);
         $this->event = null;
 
         if ($data) {
@@ -56,21 +58,26 @@ class FormSiswa extends Component
                 'kelas'   => 'required',
                 'jurusan' => 'required',
                 'total_seragam' => 'required',
-                'total_magang' => 'required',
+                'total_magang' => 'required'
             ],
             [
-                'nis.required' => 'Form tidak boleh kosong!',
-                'nama.required' => 'Form tidak boleh kosong!',
-                'total_magang.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!',
-                'total_magang.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!',
+                'nis.required' => 'Form NIS tidak boleh kosong!',
+                'nama.required' => 'Form Nama tidak boleh kosong!',
+                'kelas.required' => 'Pilih kelas!',
+                'jurusan.required' => 'Pilih Jurusan!',
+                'total_seragam.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!',
+                'total_magang.required' => 'Perlu memasukan total pembayaran yang sudah dilakukan!'
             ]
         );
 
-        $checker = Siswa::where('nis', '=', $this->nis)->exists();
-        // dd($checker);
-        if ($checker  == true) {
-            return Redirect::back()->withErrors($checker);
-        }
+        // $nis = DB::table('siswas')->select('nis')->where('id', '=', $this->id)->get();
+        // $checker = Siswa::where('nis', '=', $this->nis)->exists();
+        // dd($nis);
+        // if ($checker == true && $nis == $this->nis) {
+        //     return ('/admin');
+        // } else if ($checker == true && $nis == !$this->nis){
+        //     Session::flash('error', 'NIS Sudah terdaftar');
+        // }
 
 
         $data = [
@@ -85,7 +92,7 @@ class FormSiswa extends Component
         ];
 
         if ($this->event) {
-            $this->model::find($this->event->nis)->update($data);
+            $this->model::find($this->event->id)->update($data);
         } else {
             $this->model::create($data);
         }
