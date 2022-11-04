@@ -70,13 +70,14 @@ class SiswaController extends Controller
         return view('table.siswa');
     }
 
+    public $file = 'file';
     public function import(Request $request)
     {
         Excel::import(
             new ImportSiswa,
             $request->file('file')->store('files')
         );
-        return redirect()->back();
+        return redirect('/admin/siswa');
     }
 
     public function exportSiswa(Request $request)

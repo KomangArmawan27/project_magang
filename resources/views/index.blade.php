@@ -38,7 +38,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="s130">
-                                        <h1 style="color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0;">Tanggungan SMK Widyagama Malang</h1>
+                                        <h1 style="color: #4a0404; font-family: 'Trocchi', serif; font-size: 60px; font-weight: normal; line-height: 48px; margin: 0;">Tanggungan SMK Widyagama Malang</h1>
                                     </div>
                                 </div>
                             </div>
