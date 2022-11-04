@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 // Admin Siswa
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () { return redirect('/admin/siswa'); });
+    Route::get('/', function () {
+        return redirect('/admin/siswa');
+    });
 
     Route::get('/siswa', function () {
         return view('tables.siswa');
     });
-    
+    Route::get('/import', function () {
+        return view('section.import');
+    });
+
     Route::get('/add-siswa', function () {
         return view('forms.siswa');
     });
-    
-    Route::get('/update-siswa/{nis}', function () {
+
+    Route::get('/update-siswa/{id}', function () {
         return view('forms.siswa');
     });
 });
@@ -35,3 +42,18 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     return view('index');
 });
+
+// excel
+Route::get('/file-import', [
+    SiswaController::class,
+    'importView'
+])->name('import-view');
+
+Route::post('/import', [
+    SiswaController::class,
+    'import'
+])->name('import');
+Route::get('/export', [
+    SiswaController::class,
+    'exportSiswa'
+])->name('export');

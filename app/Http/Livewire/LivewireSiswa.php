@@ -41,8 +41,8 @@ class LivewireSiswa extends LivewireDatatable
                 return $magang ? "Lunas" : "Belum Lunas";
             })->label('magang')->unsortable(),
 
-            Column::callback(['nis'], function ($nis) {
-                return view('livewire.actions-siswa', ['nis' => $nis]);
+            Column::callback(['id'], function ($id) {
+                return view('livewire.actions-siswa', ['id' => $id]);
             })->label('Action')->unsortable()
         ];
     }
